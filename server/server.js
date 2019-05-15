@@ -7,10 +7,9 @@ const port = process.env.PORT || 3000;
 app.use(express.static(publicPath));
 
 app.get("*", (req, res) => {
-  console.log("URL NOT FOUND, serving index instead");
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-app.listen(port , () => {
-  console.log("Server is up!");
+app.listen(port, () => {
+  console.log("Server is up!" + port);
 });
