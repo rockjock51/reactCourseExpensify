@@ -14,7 +14,7 @@
     "hero-postbuild": "yarn run build:prod"
   },
   "jest": {
-    "setupFilesAfterEnv": "<rootDir>/src/tests/setupTests.js",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/setupTests.js",
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
@@ -31,7 +31,6 @@
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
     "enzyme": "3.0.0",
-    "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
     "express": "4.15.4",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -41,10 +40,10 @@
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
     "raf": "3.3.2",
-    "react": "15.6.1",
+    "react": "16.0.0",
     "react-addons-shallow-compare": "15.6.0",
     "react-dates": "12.3.0",
-    "react-dom": "15.6.1",
+    "react-dom": "16.0.0",
     "react-modal": "2.2.2",
     "react-redux": "5.0.5",
     "react-router-dom": "4.1.2",
