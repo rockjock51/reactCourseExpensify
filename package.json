@@ -11,8 +11,8 @@
     "dev-server": "webpack-dev-server",
     "test": "jest --config=jest.config.json",
     "start": "node server/server.js",
-    "hero-prebuild": "rm -rf node_modules",
-    "hero-postbuild": "yarn run build:prod"
+    "heroku-prebuild": "rm -rf node_modules",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/tests/setupTests.js",
