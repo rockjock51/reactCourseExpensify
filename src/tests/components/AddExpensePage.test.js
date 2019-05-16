@@ -1,6 +1,5 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Adapter from "enzyme-adapter-react-15";
 
 import { AddExpensePage } from "../../components/AddExpensePage";
 import expenses from "../fixtures/expenses";
