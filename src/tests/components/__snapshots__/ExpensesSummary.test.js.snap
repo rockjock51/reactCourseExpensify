@@ -4,9 +4,10 @@ exports[`should render 1 expense correctly 1`] = `
 <div>
   <p>
     Showing 
+    1
      expenses totaling
      
-    $0.00
+    $1,095.00
   </p>
 </div>
 `;
@@ -18,7 +19,7 @@ exports[`should render correctly 1`] = `
     3
      expenses totaling
      
-    $0.00
+    $1,141.95
   </p>
 </div>
 `;
