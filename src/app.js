@@ -6,6 +6,7 @@ import configureStore from "./store/configureStore";
 import { addExpense } from "./actions/expenses";
 import { setTextFilter } from "./actions/filters";
 import getVisibleExpenses from "./selectors/expenses";
+import "./firebase/firebase";
 
 import "react-dates/lib/css/_datepicker.css";
 import "normalize.css/normalize.css";
@@ -19,7 +20,6 @@ store.dispatch(addExpense({ description: "Rent", amount: 109500 }));
 
 const state = store.getState();
 const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
 
 const jsx = (
   <Provider store={store}>
