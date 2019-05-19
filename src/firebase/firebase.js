@@ -14,33 +14,4 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().set({
-  name: "Rocky Green",
-  age: 32,
-  stressLevel: 6,
-  job: {
-    title: "Software Developer",
-    company: "Walmart"
-  },
-  isSingle: false,
-  location: {
-    city: "Rogers",
-    country: "United States"
-  }
-});
-
-// database
-//   .ref("isSingle")
-//   .remove()
-//   .then(() => {
-//     console.log("Removed ref!");
-//   })
-//   .catch(e => {
-//     console.log("Couldn't remove!");
-//   });
-
-database.ref().update({
-  stressLevel: 9,
-  "job/company": "Amazon",
-  "location/city": "Seattle"
-});
+export { firebase, database as default };
