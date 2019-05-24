@@ -7,7 +7,9 @@ import {
   editExpense,
   removeExpense,
   setExpenses,
-  startSetExpenses
+  startSetExpenses,
+  startRemoveExpense,
+  startEditExpense
 } from "../../actions/expenses";
 import expenses from "../fixtures/expenses";
 
@@ -22,6 +24,7 @@ beforeEach(done => {
     .ref("expenses")
     .set(expensesData)
     .then(() => done());
+  setTimeout(() => {}, 1000);
 });
 
 test("should setup remove expense action object", () => {
@@ -80,6 +83,40 @@ test("should add expense to database and store", done => {
     })
     .catch(e => {
       console.log(e);
+    });
+});
+
+test("should remove expense from firebase", done => {
+  const store = createMockStore({});
+
+  store.dispatch(startRemoveExpense({ id: expenses[0].id })).then(() => {
+    database
+      .ref(`expenses/${expenses[0].id}`)
+      .once("value")
+      .then(snapshot => {
+        expect(snapshot.val()).toBe(null);
+        done();
+      });
+  });
+});
+
+test("should edit expense in firebase", done => {
+  const newDescription = "This is a new string";
+  const store = createMockStore({});
+  store
+    .dispatch(
+      startEditExpense(expenses[0].id, {
+        description: newDescription
+      })
+    )
+    .then(() => {
+      database
+        .ref(`expenses/${expenses[0].id}`)
+        .once("value")
+        .then(snapshot => {
+          expect(snapshot.val().description).toBe(newDescription);
+          done();
+        });
     });
 });
 
