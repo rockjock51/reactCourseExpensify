@@ -2,8 +2,8 @@
 
 exports[`should render NotFoundPage correctly 1`] = `
 <div>
-  <Connect(ExpensesSummary) />
+  <Connect(Component) />
   <Connect(ExpenseListFilters) />
-  <Connect(ExpenseList) />
+  <Connect(Component) />
 </div>
 `;
